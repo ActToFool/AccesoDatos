@@ -5,6 +5,10 @@
  */
 package facades;
 
+import entidades.DTOReporte;
+import entidades.Producto;
+import entidades.Venta;
+import entidades.Moneda;
 import java.util.ArrayList;
 
 /**

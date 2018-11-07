@@ -5,6 +5,10 @@
  */
 package facades;
 
+import entidades.DTOReporte;
+import entidades.Moneda;
+import entidades.Producto;
+import entidades.Venta;
 import java.util.ArrayList;
 
 /**
@@ -20,7 +24,7 @@ public class Vending implements IGestionProducto{
 
     @Override
     public boolean persist(Venta venta) {
-        return false
+        return false;
     }
 
     @Override
