@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package facades;
+package facade;
 
 import entidades.DTOReporte;
 import entidades.Moneda;
@@ -15,10 +15,16 @@ import java.util.ArrayList;
  *
  * @author Emanuel Álvarez
  */
-public class Vending implements IGestionProducto{
+public class GestionProducto implements IGestionProducto{
+
+    public GestionProducto() {
+    }
+    
+    
 
     @Override
     public ArrayList<Producto> cargarProductos() {
+        
         return null;
     }
 
