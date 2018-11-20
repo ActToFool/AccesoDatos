@@ -10,13 +10,14 @@ import entidades.Producto;
 import entidades.Venta;
 import entidades.Moneda;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author Emanuel Álvarez
  */
 public interface IGestionProducto {
-    ArrayList<Producto> cargarProductos();
+    HashMap<Integer,Producto> cargarProductos();
     boolean persist(Venta venta);
     ArrayList<Moneda> cargarMonedas();
     boolean persistirReporte(DTOReporte p_reporte);
