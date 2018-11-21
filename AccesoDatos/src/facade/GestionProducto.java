@@ -8,6 +8,7 @@ package facade;
 import entidades.Alimento;
 import entidades.Bebida;
 import entidades.DTOReporte;
+import entidades.Denominacion;
 import entidades.Moneda;
 import entidades.Producto;
 import entidades.Venta;
@@ -64,7 +65,29 @@ public class GestionProducto implements IGestionProducto {
 
     @Override
     public ArrayList<Moneda> cargarMonedas() {
-        return null;
+        ArrayList<Moneda> monedas=new ArrayList<>();
+        try (Scanner entrada = new Scanner(Paths.get("C:\\Users\\Usuario\\Desktop\\UNIVERSIDAD\\archivoMonedas.csv"))) {
+            while (entrada.hasNext()) {
+                String registro = entrada.next();
+                String[] elementos = registro.split(",");
+                if (elementos.length == 0) {
+                    break;
+                }
+                int cantidad = Integer.parseInt(elementos[0]);
+                int denominacion=Integer.parseInt(elementos[1]);
+                Moneda m = null;
+                if(denominacion==500){
+                    m=new Moneda(cantidad, Denominacion.QUINIENTOS);
+                }
+                else{
+                    m=new Moneda(cantidad, Denominacion.MIL);
+                }
+                monedas.add(m);
+            }
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex.toString());
+        }
+        return monedas;
     }
 
     @Override
